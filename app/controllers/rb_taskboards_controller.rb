@@ -84,24 +84,8 @@ class RbTaskboardsController < RbApplicationController
 
     ## determine status columns to show
     tracker = Tracker.find_by_id(RbTask.tracker)
-    all_statuses = tracker.issue_statuses
+    statuses = tracker.issue_statuses
     # disable columns by default
-    statuses =[]
-
-    all_statuses.each do |status|
-      statuses[0] = status if status.name == 'New'
-      statuses[1] = status if status.name == 'In Progress'
-      statuses[2] = status if status.name == 'Code review'
-      statuses[3] = status if status.name == 'Resolved'
-      statuses[4] = status if status.name == 'Testing'
-      statuses[5] = status if status.name == 'Reopened'
-      statuses[6] = status if status.name == 'Closed'
-      statuses[7] = status if status.name == 'Stopped'
-      statuses[8] = status if status.name == 'Not reproduce'
-      statuses[9] = status if status.name == 'Refusal'
-      statuses[10] = status if status.name == 'Feedback'
-      statuses[11] = status if status.name == 'Documentation'
-    end
 
     if false && User.current.admin? #disabling all columns for admin users
       @statuses = statuses

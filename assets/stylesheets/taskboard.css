@@ -460,7 +460,7 @@
     padding-right:5px;
     position:absolute;
     bottom: -5px;
-    left: 40px;
+    left: -5px;   
     vertical-align: middle;
 
 
@@ -480,8 +480,9 @@
     padding-left:5px;
     padding-right:5px;
     position:absolute;
-    bottom: -5px;
-    left: -5px;
+    display:none;
+    bottom: -5px;    
+    left: 10px;
     vertical-align: middle;
 
 
