@@ -231,7 +231,7 @@ class RbTask < Issue
       # Make sure user has permission to edit time entries to allow
       # logging time for other users. Use current user in case none is selected
       if User.current.allowed_to?(:edit_time_entries, self.project) && params[:time_entry_user_id].to_i != 0
-        @time_entry.user_id = params[:time_entry_user_id]
+        @time_entry.user_id = User.current.id
       else
         # Otherwise log time for current user
         @time_entry.user_id = User.current.id
