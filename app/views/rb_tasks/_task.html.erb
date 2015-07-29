@@ -38,11 +38,19 @@
 
   <% if User.current.allowed_to?(:log_time, @project) && @settings[:timelog_from_taskboard]=='enabled' %>
       <div class="time_entry_hours editable" style="display: none" fieldname="time_entry_hours" fieldlabel="<%= l(:field_time_entry_hours) %>"></div>
+    <!--
       <% if User.current.allowed_to?(:edit_time_entries, @project) %>
           <div class="time_entry_user_id editable" fieldtype="select" fieldname="time_entry_user_id" fieldlabel="<%= l(:field_time_entry_user_id) %>">
             <div class="v" style="display: none"><%= assignee_id_or_empty(task) %></div>
           </div>
       <% end %>
+      -->
+
+      <div class="time_entry_activity_id editable"  style="display: none" fieldtype="select" fieldname="time_entry_activity_id" fieldlabel="<%= l(:field_time_entry_activity) %>">
+        <div class="t"><%= h TimeEntryActivity.first.name %></div>
+        <div class="v"><%= TimeEntryActivity.first.id %></div>
+      </div>
+
       <div class="Time_entry_spent_on editable date" fieldname="time_entry_spent_on" fieldlabel="<%= l(:field_time_entry_spend_on) %>" style="display:none"><%= Date.today %></div>
 
 

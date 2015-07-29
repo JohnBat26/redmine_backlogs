@@ -191,7 +191,11 @@
       <%- end %>
     </select>
 
-
+    <select class="time_entry_activity_id template" id="time_entry_activity_id_options">
+      <%- TimeEntryActivity.shared.active.each do |u| %>
+          <option value="<%= u.id %>"><%= u.name %></option>
+      <%- end %>
+    </select>
 
     <select class="assigned_to_id template" id="assigned_to_id_options">
       <option value="" color="#AAAAAA" color_light="#E0E0E0"></option>

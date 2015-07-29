@@ -109,6 +109,7 @@ ru:
   field_time_entry_hours: "Затрачено часов"
   field_time_entry_spend_on: "Дата списания"
   field_time_entry_user_id: "Автор списания"
+  field_time_entry_activity: "Активность"
   field_tracker_id: "Идентификатор трекера"
   field_velocity_based_estimate: "Оценка на основе скорости"
   field_total_spent_hours: "Всего затрачено времени"

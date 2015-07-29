@@ -244,11 +244,12 @@ class RbTask < Issue
       @time_entry.hours = params[:time_entry_hours].gsub(',', '.').to_f
       # Choose default activity
       # If default is not defined first activity will be chosen
-      if default_activity = TimeEntryActivity.default
-        @time_entry.activity_id = default_activity.id
+      if !params[:time_entry_activity_id].blank?
+        @time_entry.activity_id = params[:time_entry_activity_id]
       else
         @time_entry.activity_id = TimeEntryActivity.first.id
       end
+
       @time_entry.comments = params[:time_entry_comments]
       self.time_entries << @time_entry
     end
