@@ -13,6 +13,8 @@
     <div class="v"><%= id_or_empty(task) %></div>
   </div>
 
+  <div class="Time_entry_spent_on editable date" fieldname="issue_start_date" fieldlabel="<%= l(:field_start_date) %>" style="display:none"><%= task.start_date ? task.start_date : Date.today %></div>
+
   <div class="subject editable" fieldtype="textarea" fieldname="subject" fieldlabel="<%= l(:field_subject) %>">
     <%= h task.subject %>
   </div>

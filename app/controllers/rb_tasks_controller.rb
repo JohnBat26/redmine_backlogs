@@ -8,6 +8,7 @@ class RbTasksController < RbApplicationController
     @task = nil
     begin
       @task  = RbTask.create_with_relationships(params, User.current.id, @project.id)
+
     rescue => e
       render :text => e.message.blank? ? e.to_s : e.message, :status => 400
       return
