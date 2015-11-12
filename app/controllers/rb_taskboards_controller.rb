@@ -90,11 +90,11 @@ class RbTaskboardsController < RbApplicationController
 
     all_statuses.each do |status|
       statuses[0] = status if status.name == 'New'
-      statuses[1] = status if status.name == 'In Progress'
-      statuses[2] = status if status.name == 'Code review'
-      statuses[3] = status if status.name == 'Resolved'
-      statuses[4] = status if status.name == 'Testing'
-      statuses[5] = status if status.name == 'Reopened'
+      statuses[1] = status if status.name == 'Reopened'
+      statuses[2] = status if status.name == 'In Progress'
+      statuses[3] = status if status.name == 'Code review'
+      statuses[4] = status if status.name == 'Resolved'
+      statuses[5] = status if status.name == 'Testing'
       statuses[6] = status if status.name == 'Closed'
       statuses[7] = status if status.name == 'Stopped'
       statuses[8] = status if status.name == 'Not reproduce'
